@@ -7,20 +7,21 @@
     body {
       margin: 0;
       height: 100vh;
+      background-color: #000; /* черный фон */
       display: flex;
-      justify-content: center; /* по горизонтали */
-      align-items: center;     /* по вертикали */
+      justify-content: center;
+      align-items: center;
     }
 
     .container {
       display: flex;
-      flex-direction: column; /* вертикальное расположение */
+      flex-direction: column;
       align-items: center;
-      gap: 20px; /* расстояние между картинками */
+      gap: 30px; /* чуть больше расстояние между изображениями */
     }
 
     img {
-      width: 200px;
+      width: 400px; /* увеличено в 2 раза */
       cursor: pointer;
       transition: transform 0.2s ease;
     }
