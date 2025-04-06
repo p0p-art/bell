@@ -2,59 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>bell</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>Image Sound Player</title>
   <style>
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      margin: 0;
       height: 100vh;
-      background-color: #121212;
+      display: flex;
+      justify-content: center; /* по горизонтали */
+      align-items: center;     /* по вертикали */
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column; /* вертикальное расположение */
+      align-items: center;
+      gap: 20px; /* расстояние между картинками */
     }
 
     img {
+      width: 200px;
       cursor: pointer;
-      max-width: 300px;
-      transition: transform 0.2s;
+      transition: transform 0.2s ease;
     }
 
     img:hover {
       transform: scale(1.05);
     }
-.image-container {
-      display: flex;
-      flex-wrap: wrap; /* Позволяет изображениям переходить на новую строку */
-      justify-content: space-around; /* Распределяет пространство между изображениями */
-    }
-
-    .image-container img {
-      width: 45%; /* Устанавливает ширину картинок */
-      margin: 10px; /* Отступы между изображениями */
-    }
   </style>
 </head>
 <body>
+  <div class="container">
+    <img src="img1.jpg" alt="Image 1" id="img1">
+    <img src="img2.jpg" alt="Image 2" id="img2">
+    <img src="img3.jpg" alt="Image 3" id="img3">
+  </div>
 
-  <img src="Woody_Woodpecker.jpg" alt="WW" id="WWI" />
-  <img src="Woody_Woodpecker.jpg" alt="WW" id="WWI" />
-  <img src="Woody_Woodpecker.jpg" alt="WW" id="WWI" />
+  <audio id="audio1" src="audio1.mp3"></audio>
+  <audio id="audio2" src="audio2.mp3"></audio>
+  <audio id="audio3" src="audio3.mp3"></audio>
 
-  <!-- Звуковые файлы -->
-  <audio id="WWS" src="WW.mp3"></audio>
-  
   <script>
-    // Добавляем обработчики событий для изображений
-    document.getElementById("WWI").addEventListener("click", function() {
-      document.getElementById("WWS").play();
+    document.getElementById('img1').addEventListener('click', () => {
+      document.getElementById('audio1').play();
     });
 
-    document.getElementById("img2").addEventListener("click", function() {
-      document.getElementById("sound2").play();
+    document.getElementById('img2').addEventListener('click', () => {
+      document.getElementById('audio2').play();
     });
 
-    document.getElementById("img3").addEventListener("click", function() {
-      document.getElementById("sound3").play();
+    document.getElementById('img3').addEventListener('click', () => {
+      document.getElementById('audio3').play();
     });
   </script>
 </body>
