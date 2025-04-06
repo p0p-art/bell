@@ -26,23 +26,26 @@
 </head>
 <body>
 
-  <img src="Woody_Woodpecker.jpg" alt="Click me!" id="image">
+  <img src="Woody_Woodpecker.jpg" alt="WW" id="WW" />
+  <img src="Woody_Woodpecker.jpg" alt="WW" id="WW" />
+  <img src="Woody_Woodpecker.jpg" alt="WW" id="WW" />
 
-  <audio id="audio" src="Woody_Woodpecker.mp3"></audio>
-
+  <!-- Звуковые файлы -->
+  <audio id="WWS" src="Woody_Woodpecker.mp3"></audio>
+  
   <script>
-    const img = document.getElementById("image");
-    const audio = document.getElementById("audio");
+    // Добавляем обработчики событий для изображений
+    document.getElementById("WW").addEventListener("click", function() {
+      document.getElementById("WWS").play();
+    });
 
-    img.addEventListener("click", () => {
-      if (audio.paused) {
-        audio.play();
-      } else {
-        audio.pause();
-        audio.currentTime = 0; // возвращает в начало
-      }
+    document.getElementById("img2").addEventListener("click", function() {
+      document.getElementById("sound2").play();
+    });
+
+    document.getElementById("img3").addEventListener("click", function() {
+      document.getElementById("sound3").play();
     });
   </script>
-
 </body>
 </html>
